@@ -18,15 +18,13 @@ extension Tag {
   enum com_chris_swiftTesting {}
 }
 
-
 extension Tag.com_chris_swiftTesting {
   @Tag static var extraSpecial: Tag
 }
 
-
 @Suite struct TagsTests {
 
-    @Test
+    @Test(.tags(Tag.com_chris_swiftTesting.extraSpecial))
     func addition() {
         let mathOperations = MathOperations()
         let result = mathOperations.add(1, 2)
